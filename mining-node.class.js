@@ -1,12 +1,13 @@
-const DEFAULT_DATA = { transactions: [{ from: 'BlockReward', to: this.name, amount: 5 }] };
-
 class MiningNode {
 
     isMining = false;
     currentBlock;
 
-    constructor(id) {
+    constructor(id, name) {
         this.id = id;
+        this.name = name;
+        this.DEFAULT_DATA = { transactions: [{ from: 'BlockReward', to: this.name, amount: 5 }] };
+
         broadcaster.subscribe((nodeID) => {
             console.log('Nachricht empfangen:', nodeID);
             if (nodeID !== this.id) {
@@ -31,7 +32,7 @@ class MiningNode {
     }
 
     async mine() {
-        this.currentBlock = new Block(Date.now(), DEFAULT_DATA);
+        this.currentBlock = new Block(Date.now(), this.DEFAULT_DATA);
         await blockchain.addBlock(this.currentBlock, this.id);
         if (this.isMining) {
             this.mine();

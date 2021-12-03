@@ -5,6 +5,7 @@ class Blockchain {
 
     async addBlock(block, nodeID) {
         let lb = this.getLastBlock();
+        block.data.moneyTable = lb ? lb.data.moneyTable : [];
         block.lastHash = lb ? lb.createHash() : '';
         try {
             await block.mine();
