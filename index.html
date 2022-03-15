@@ -24,21 +24,21 @@
                     <div class="mb-16">
                         <select name="from" id="from" class="mr-16">
                             <option value="" disabled>Von</option>
-                            <option value="">Manuel</option>
-                            <option value="">Junus</option>
-                            <option value="">Jessica</option>
+                            <option value="Manuel">Manuel</option>
+                            <option value="Junus">Junus</option>
+                            <option value="Jessica">Jessica</option>
                         </select>
 
                         <select name="to" id="to">
                             <option value="" disabled>An</option>
-                            <option value="">Manuel</option>
-                            <option value="">Junus</option>
-                            <option value="">Jessica</option>
+                            <option value="Manuel">Manuel</option>
+                            <option value="Junus">Junus</option>
+                            <option value="Jessica">Jessica</option>
                         </select>
                     </div>
                     <div>
                         <input type="number" min="1" placeholder="Betrag" id="amount" class="mr-16">
-                        <button>Abschicken</button>
+                        <button onclick="sendMoney()">Abschicken</button>
                     </div>
                 </section>
                 <section>
@@ -54,10 +54,8 @@
                 </section>
             </div>
             <div class="col-850 fill-rest">
-                <section>
-                    <h2>Transaktionen</h2>
-                    <div class="card mb-16">Manuel ➔ Junus $5</div>
-                    <div class="card">Junus ➔ Jessica > 4$</div>
+                <section id="transactionContainer">
+
                 </section>
                 <section>
                     <h2>Daten</h2>

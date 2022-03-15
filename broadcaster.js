@@ -13,3 +13,4 @@ class Broadcaster {
 }
 
 let broadcaster = new Broadcaster();
+let newTransaction = new Broadcaster();
